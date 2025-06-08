@@ -1,0 +1,70 @@
+html,body{
+    margin: 0;
+    height: 100%;
+    font-size: 16px;
+    font-family: "Lato",sans-serif;
+    font-weight: 400;
+    line-height: 1.8em;
+    color: #666;
+}
+
+.img1{
+    background-image: url(../images/img1.jpg);
+    min-height: 100%;
+}
+
+
+.img2{
+    background-image: url(../images/img2.jpeg);
+    min-height: 400px;
+}
+
+
+.img3{
+    background-image: url(../images/img3.jpg);
+    min-height: 400px;
+}
+
+.img4{
+    background-image: url(../images/img4.avif);
+    min-height: 100%;
+}
+
+.img1, .img2, .img3, .img4{
+    position: relative;/*positioned relative to its normal position, since by default pos is static we cant apply top,left,bottom,right hence use relative.*/
+    background-position: center;  
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.text{
+    position: absolute;/*positioned relative to the nearest positioned ancestor*/
+    top:50%;
+    width: 100%;
+    text-align: center;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.textBg{
+    background-color: #313534;
+    color: #fff;
+    padding: 20px;
+}
+
+.section{
+    padding: 50px 80px;
+    text-align: center;
+}
+
+.section-light{
+    background-color: #f4f4f4;
+    color: #666;
+}
+
+.section-dark{
+    background-color: #282e34;
+    color: #ddd;
+}
