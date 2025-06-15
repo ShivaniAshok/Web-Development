@@ -2,14 +2,24 @@ const qrFormElem = document.getElementById('qrForm');
 const qrImageElem = document.getElementById('qrImage');
 const qrContainerElem = document.getElementById('qrContainer');
 const qrInputTextElem = document.getElementById('qrInputText');
+const generateBtnElem = document.getElementById('generateBtn');
 
 const renderQRCode = (url) => {
   if (!url) return;
 
+  generateBtnElem.innerText = 'Generating QR Code';
   qrImageElem.src = url;
-  qrContainerElem.classList.add('show');
 
-  qrImageElem.addEventListener('load', () => {});
+  const onImageLoad = () => {
+    const interval = setInterval(() => {
+      qrContainerElem.classList.add('show');
+
+      clearInterval(interval);
+      generateBtnElem.innerText = 'Generate QR Code';
+    }, 500);
+  };
+
+  qrImageElem.addEventListener('load', onImageLoad);
 };
 
 qrFormElem.addEventListener('submit', (event) => {
